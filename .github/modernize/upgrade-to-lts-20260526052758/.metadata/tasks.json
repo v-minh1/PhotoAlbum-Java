@@ -14,7 +14,13 @@
         "generateNewUnitTests": "false",
         "passUnitTests": "true"
       },
-      "status": "pending"
+      "status": "success",
+      "taskSummary": "Successfully upgraded Java from 8 to 21. Updated pom.xml (java.version, maven.compiler.source/target to 21, added maven-compiler-plugin 3.13.0) and Dockerfile (eclipse-temurin:21 base images). Build and tests pass.",
+      "successCriteriaStatus": {
+        "passBuild": true,
+        "generateNewUnitTests": false,
+        "passUnitTests": true
+      }
     }
   ],
   "metadata": {
