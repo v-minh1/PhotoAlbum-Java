@@ -14,7 +14,13 @@
         "generateNewUnitTests": "false",
         "passUnitTests": "true"
       },
-      "status": "pending"
+      "status": "success",
+      "summary": "Upgraded from Java 8 / Spring Boot 2.7.18 to Java 25 / Spring Boot 4.0.0-RC2 (Spring Framework 7.0.0-RC3). Migrated javax.* imports to jakarta.*, updated Dockerfile to eclipse-temurin:25, remediated CVE-2024-47554 in commons-io. Build and 1/1 unit tests pass.",
+      "successCriteriaStatus": {
+        "passBuild": true,
+        "generateNewUnitTests": false,
+        "passUnitTests": true
+      }
     }
   ],
   "metadata": {
