@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Upgrade plan to migrate project to Java 21 LTS",
+  "tasks": [
+    {
+      "type": "upgrade",
+      "id": "001-upgrade-java-21",
+      "description": "Upgrade to Java 21",
+      "reason": "Java 21 is an LTS release with long-term support, offering improved performance, new language features (records, pattern matching, virtual threads via Project Loom), and enhanced security.",
+      "requirements": "Upgrade JDK to Java 21. Update build configuration (Maven or Gradle) to target Java 21. Ensure all dependencies are compatible with Java 21. Do not upgrade Spring Boot, Spring Framework, or Jakarta EE as part of this task.",
+      "skills": [{ "name": "java-version-upgrade", "location": "builtin" }],
+      "successCriteria": {
+        "passBuild": "true",
+        "generateNewUnitTests": "false",
+        "passUnitTests": "true"
+      },
+      "status": "pending"
+    }
+  ],
+  "metadata": {
+    "planName": "upgrade-to-lts",
+    "projectName": "application",
+    "language": "java",
+    "createdAt": "2026-05-26T05:28:00.000Z",
+    "version": "1.0"
+  }
+}
