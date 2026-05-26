@@ -1,5 +1,7 @@
-# Use Maven with OpenJDK 8 for building
-FROM maven:3.9.6-eclipse-temurin-8 AS build
+# Use Eclipse Temurin JDK 25 with Maven for building
+FROM eclipse-temurin:25-jdk-noble AS build
+
+RUN apt-get update && apt-get install -y maven && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
@@ -13,8 +15,8 @@ COPY src ./src
 # Build the application
 RUN mvn clean package -DskipTests
 
-# Use OpenJDK 8 runtime for the final image
-FROM eclipse-temurin:8-jre
+# Use Eclipse Temurin JRE 25 for the final image
+FROM eclipse-temurin:25-jre-noble
 
 WORKDIR /app
 
